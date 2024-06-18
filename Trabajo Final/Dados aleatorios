@@ -1,0 +1,79 @@
+#include <iostream>
+#include <cstdlib>  // Para rand() y srand()
+#include <ctime>    // Para time()
+using namespace std;
+
+//  mostramos el dado ;)
+void mostrarDado(int numero) {
+    switch (numero) {
+        case 1:
+            cout << "+-------+\n"
+                 << "|       |\n"
+                 << "|   O   |\n"
+                 << "|       |\n"
+                 << "+-------+\n";
+            break;
+        case 2:
+            cout << "+-------+\n"
+                 << "| O     |\n"
+                 << "|       |\n"
+                 << "|     O |\n"
+                 << "+-------+\n";
+            break;
+        case 3:
+            cout << "+-------+\n"
+                 << "| O     |\n"
+                 << "|   O   |\n"
+                 << "|     O |\n"
+                 << "+-------+\n";
+            break;
+        case 4:
+            cout << "+-------+\n"
+                 << "| o   o |\n"
+                 << "|       |\n"
+                 << "| o   o |\n"
+                 << "+-------+\n";
+            break;
+        case 5:
+            cout << "+-------+\n"
+                 << "| o   o |\n"
+                 << "|   o   |\n"
+                 << "| o   o |\n"
+                 << "+-------+\n";
+            break;
+        case 6:
+            cout << "+-------+\n"
+                 << "| o   o |\n"
+                 << "| o   o |\n"
+                 << "| o   o |\n"
+                 << "+-------+\n";
+            break;
+        default:
+            break;
+    }
+}
+
+main(){
+
+    srand((time(0)));
+    char respuesta;
+
+    do {
+        cout << "---------------------\n"
+             << "ºLanzando el dado...<3º\n"
+             << "---------------------\n" << endl;
+
+        // Generar un número aleatorio entre 1 y 6
+        int resultado = (rand() % 6) + 1;
+        cout << "Ha salido: " << resultado << endl;
+        mostrarDado(resultado);
+
+       cout << "---------------------------------------\n"
+            << "!¿Quieres lanzar el dado otra vez? <3:!\n"
+            << "---------------------------------------\n";
+
+        cin >> respuesta;
+    } while (respuesta == 's' || respuesta == 'S');
+
+    return 0;
+}
