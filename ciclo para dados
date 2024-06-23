@@ -1,0 +1,35 @@
+/// variable "resultado" es el resultado de la tirada de dados
+int resultado;
+
+/// cada r es el resultado de cada tirada
+int r1
+int r2
+int r3
+int r4
+int r5
+int r6
+
+/// los dados se tiran seis veces,
+
+for(int x = 0; x < 6; x+1){
+        ///poner la funcion dados para que el resultado que de el "resultado"
+
+        if (x == 0)
+           {r1 == resultado;}
+
+        else if (x == 1)
+                {r2 == resultado;}
+
+        else if ( x == 2)
+                {r3 == resultado;}
+
+        else if (x == 3)
+                {r4 == resultado;}
+
+        else if (x == 4)
+                {r5 == resultado;}
+
+        else if (x == 5)
+                {r6 == resultado;}
+/// cuando esten los 6 resultados se llevan a la funciòn que hiciste para determinar el resultado de la tirada
+/// despues se tiran los dados de nuevo
