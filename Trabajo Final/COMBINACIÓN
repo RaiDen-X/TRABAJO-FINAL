@@ -1,0 +1,42 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void lanDados(vector<int>& dados) {
+    //función para lanzar los dados y almacenar los resultados en el vector 'dados'
+}
+
+int calPunt(const vector<int>& dados) {
+    // calcular la puntuación basada en los resultados de los dados
+    return 0;
+}
+
+void imprDados(const vector<int>& dados) {
+    //imprimir los resultados de los dados
+}
+
+int main() {
+    vector<int> dados(6);
+    int puntajeTotal = 0;
+
+    for (int i = 1; i <= 3; ++i) {
+        lanDados(dados);
+        int puntaje = calPunt(dados);
+
+        cout << "|LANZAMIENTO N°|\n" << i << endl;
+        imprDados(dados);
+        cout << "|Puntaje del lanzamiento: " << puntaje << " puntos|\n";
+
+        if (puntaje == -1) {
+            cout << "|¡ESCALERA! ¡GANASTE LA PARTIDA!|\n";
+            puntajeTotal = 100; // Ganar el juego
+            break;
+        } else if (puntaje == 0) {
+            cout << "|Sexteto de 6! El puntaje total se resetea a 0.|\n";
+            puntajeTotal = 0;
+            break;
+        }
+    }
+
+    return 0;
+}
