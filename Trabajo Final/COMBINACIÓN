@@ -1,5 +1,19 @@
+//vector<int>& en C++ es una referencia constante a un vector de enteros.
+//Esto significa que la referencia en sí es constante, por lo que no se puede modificar el vector al que hace referencia.
+//Sin embargo, los elementos del vector pueden ser modificados si no son constantes. fuente
+
+//Restricciones de const vector<int>& No se puede usar const vector<int>& para crear un nuevo vector de enteros.
+//También hay que tener en cuenta que no se puede modificar el tamaño del vector al que hace referencia la referencia constante.
+
+
+//¿Cuándo usar const vector<int>&? Se debe usar const vector<int>& cuando se necesita pasar un vector a una función o método sin que la función o método pueda modificar el vector. Esto ayuda a mejorar la seguridad y la legibilidad del código
+
+
+//*https://www.reddit.com/r/cpp_questions/comments/f1r2v8/vectorintconst_iterator_vs_const_vectorintiterator/?rdt=64724
+
 #include <iostream>
 #include <vector>
+
 using namespace std;
 
 void lanDados(vector<int>& dados) {
@@ -16,12 +30,14 @@ void imprDados(const vector<int>& dados) {
 }
 
 int main() {
-    vector<int> dados(6);
-    int puntajeTotal = 0;
+vector<int> dados(6);
+int puntajeTotal = 0;
+int puntaje;
+
 
     for (int i = 1; i <= 3; ++i) {
         lanDados(dados);
-        int puntaje = calPunt(dados);
+         puntaje = calPunt(dados);
 
         cout << "|LANZAMIENTO N°|\n" << i << endl;
         imprDados(dados);
