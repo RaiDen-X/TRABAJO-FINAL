@@ -1,11 +1,11 @@
 #include <iostream>
 #include <vector>
-#include <algorithm> // Para sort
-#include <numeric>   // Para accumulate
+#include <algorithm> // sort
+#include <numeric>   // accumulate
 
 using namespace std;
 
-// Funci髇 para verificar si es escalera
+// Funci贸n para verificar si es escalera
 bool esEscalera(const vector<int>& dados) {
     for (int i = 0; i < 6; ++i) {
         if (dados[i] != i + 1) {
@@ -15,7 +15,7 @@ bool esEscalera(const vector<int>& dados) {
     return true;
 }
 
-// Funci髇 para verificar si es sexteto
+// Funci贸n para verificar si es sexteto
 bool esSexteto(const vector<int>& dados, int& valor) {
     valor = dados[0];
     for (int i = 1; i < 6; ++i) {
@@ -26,8 +26,14 @@ bool esSexteto(const vector<int>& dados, int& valor) {
     return true;
 }
 
-// Funci髇 para calcular la puntuaci髇 de un lanzamiento
+// Funci贸n para calcular la puntuaci贸n de un lanzamiento
+
 int calcularPuntuacion(vector<int>& dados) {
+    
+   //https://openwebinars.net/blog/uso-de-la-funcion-sort-en-cpp/ 
+   //Utiliza la funci贸n "sort" de C++ para ordenar los elementos en "dados" desde el inicio hasta el final
+   //Un iterador que apunta al principio de la colecci贸n.
+   //https://learn.microsoft.com/es-es/cpp/cppcx/begin-function?view=msvc-170
     sort(dados.begin(), dados.end());
 
     if (esEscalera(dados)) {
@@ -42,7 +48,7 @@ int calcularPuntuacion(vector<int>& dados) {
     return accumulate(dados.begin(), dados.end(), 0);
 }
 
-// Funci髇 para imprimir los dados
+// Funci贸n para imprimir los dados
 void imprimirDados(const vector<int>& dados) {
     for (int dado : dados) {
         cout << dado << " ";
